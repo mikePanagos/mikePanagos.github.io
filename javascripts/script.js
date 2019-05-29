@@ -251,7 +251,7 @@ function changePedal(p) {
         $('.feedbackLabel').text(echosystem.feedback);
         $('.toneLabel').text(echosystem.tone);
         $('.saveLabel').text("Save");
-        $('#savePreset').show();
+        // $('#savePreset').show();
 
 
     } else if (p == 2) {
@@ -277,7 +277,7 @@ function changePedal(p) {
         $('.ratioLabel').text(reverb.ratio);
         $('.feedbackLabel').text(reverb.feedback);
         $('.toneLabel').text(reverb.tone);
-        $('#savePreset').hide();
+        // $('#savePreset').hide();
 
     }
 
