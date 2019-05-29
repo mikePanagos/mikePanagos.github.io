@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<head>
+    <link rel="icon" href="./logo.png">
+  <title>
+    Midi Pedal Editor
+  </title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel='stylesheet' href='./stylesheets/stylesheet.css' />
+</head>
+
+<body id="body">
+  
+  <div class="container">
+      
+    <div class="header col">
+        <h1 class="row justify-content-center "id="pedalName">
+          EchoSystem
+        </h1>
+    </div>
+  </div>
+  <div class="container col">
+    <div id="lightDark" class="btn-group btn-group-toggle" data-toggle="buttons">
+      <label id="light" class="btn btn-secondary active">
+        <input type="radio" name="lightDark" id="light" autocomplete="off" value="1" checked> Light
+      </label>
+      <label id="dark" class="btn btn-secondary">
+        <input type="radio" name="lightDark" id="dark" autocomplete="off" value="2"> Dark
+      </label>
+
+    </div>
+  </div>
+  <div class="container col">
+    <div id="dropdown" class="btn-group">
+      <div class="btn-group">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
+          <label id="ddpedal"> EchoSystem</label>
+        </button>
+        <div class="dropdown-menu" role="menu">
+          <a class="dropdown-item" onclick="changePedal(1)">EchoSystem</a>
+           <a class="dropdown-item" onclick="changePedal(2)">Reverb</a> 
+        </div>
+      </div>
+      <div class="btn-group">
+        <button class="btn btn-secondary dropdown-toggle 1" type="button" data-toggle="dropdown">
+          <label id="ddMidiChannel"> Midi Channel 1 </label>
+        </button>
+        <div class="dropdown-menu" role="menu">
+          <a class="dropdown-item 1" onclick="changeMidiChannel(1)">Midi Channel 1</a>
+          <a class="dropdown-item 1" onclick="changeMidiChannel(2)">Midi Channel 2</a>
+          <a class="dropdown-item 1" onclick="changeMidiChannel(3)">Midi Channel 3</a>
+          <a class="dropdown-item 1" onclick="changeMidiChannel(4)">Midi Channel 4</a>
+          <a class="dropdown-item 1" onclick="changeMidiChannel(5)">Midi Channel 5</a>
+          <a class="dropdown-item 1" onclick="changeMidiChannel(6)">Midi Channel 6</a>
+          <a class="dropdown-item 1" onclick="changeMidiChannel(7)">Midi Channel 7</a>
+          <a class="dropdown-item 1" onclick="changeMidiChannel(8)">Midi Channel 8</a>
+          <a class="dropdown-item 1" onclick="changeMidiChannel(9)">Midi Channel 9</a>
+          <a class="dropdown-item 1" onclick="changeMidiChannel(10)">Midi Channel 10</a>
+          <a class="dropdown-item 1" onclick="changeMidiChannel(11)">Midi Channel 11</a>
+          <a class="dropdown-item 1" onclick="changeMidiChannel(12)">Midi Channel 12</a>
+          <a class="dropdown-item 1" onclick="changeMidiChannel(13)">Midi Channel 13</a>
+          <a class="dropdown-item 1" onclick="changeMidiChannel(14)">Midi Channel 14</a>
+          <a class="dropdown-item 1" onclick="changeMidiChannel(15)">Midi Channel 15</a>
+          <a class="dropdown-item 1" onclick="changeMidiChannel(16)">Midi Channel 16</a>
+        </div>
+      </div>
+      <!-- drop down menu for presets -->
+      <div class="btn-group">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="preset" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <label id=dropdownLabel> Preset</label>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="preset">
+          <a class="dropdown-item" onclick="changePreset(0)">preset 0</a>
+          <a class="dropdown-item" onclick="changePreset(1)">preset 1</a>
+          <a class="dropdown-item" onclick="changePreset(2)">preset 2</a>
+          <a class="dropdown-item" onclick="changePreset(3)">preset 3</a>
+          <a class="dropdown-item" onclick="changePreset(4)">preset 4</a>
+          <a class="dropdown-item" onclick="changePreset(5)">preset 5</a>
+          <a class="dropdown-item" onclick="changePreset(6)">preset 6</a>
+          <a class="dropdown-item" onclick="changePreset(7)">preset 7</a>
+          <a class="dropdown-item" onclick="changePreset(8)">preset 8</a>
+          <a class="dropdown-item" onclick="changePreset(9)">preset 9</a>
+          <a class="dropdown-item" onclick="changePreset(10)">preset 10</a>
+          <a class="dropdown-item" onclick="changePreset(11)">preset 11</a>
+          <a class="dropdown-item" onclick="changePreset(12)">preset 12</a>
+          <a class="dropdown-item" onclick="changePreset(13)">preset 13</a>
+          <a class="dropdown-item" onclick="changePreset(14)">preset 14</a>
+          <a class="dropdown-item" onclick="changePreset(15)">preset 15</a>
+          <a class="dropdown-item" onclick="changePreset(16)">preset 16</a>
+          <a class="dropdown-item" onclick="changePreset(17)">preset 17</a>
+          <a class="dropdown-item" onclick="changePreset(18)">preset 18</a>
+          <a class="dropdown-item" onclick="changePreset(19)">preset 19</a>
+          <a class="dropdown-item" onclick="changePreset(20)">preset 20</a>
+          <a class="dropdown-item" onclick="changePreset(21)">preset 21</a>
+          <a class="dropdown-item" onclick="changePreset(22)">preset 22</a>
+          <a class="dropdown-item" onclick="changePreset(23)">preset 23</a>
+          <a class="dropdown-item" onclick="changePreset(24)">preset 24</a>
+          <a class="dropdown-item" onclick="changePreset(25)">preset 25</a>
+          <a class="dropdown-item" onclick="changePreset(26)">preset 26</a>
+          <a class="dropdown-item" onclick="changePreset(27)">preset 27</a>
+          <a class="dropdown-item" onclick="changePreset(28)">preset 28</a>
+          <a class="dropdown-item" onclick="changePreset(29)">preset 29</a>
+          <a class="dropdown-item" onclick="changePreset(30)">preset 30</a>
+          <a class="dropdown-item" onclick="changePreset(31)">preset 31</a>
+          <a class="dropdown-item" onclick="changePreset(32)">preset 32</a>
+          <a class="dropdown-item" onclick="changePreset(33)">preset 33</a>
+          <a class="dropdown-item" onclick="changePreset(34)">preset 34</a>
+          <a class="dropdown-item" onclick="changePreset(35)">preset 35</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div id="echoSystem1"class="container col">
+    <div id="my-btns" class="btn-group btn-group-toggle" data-toggle="buttons">
+      <label id="Single" class="btn btn-secondary active">
+        <input type="radio" name="empressRoute" id="option1" autocomplete="off" value="1" checked> Single
+      </label>
+      <label id="Parallel" class="btn btn-secondary">
+        <input type="radio" name="empressRoute" id="option2" autocomplete="off" value="2"> Parallel
+      </label>
+      <label id="Serial" class="btn btn-secondary">
+        <input type="radio" name="empressRoute" id="option3" autocomplete="off" value="3"> Serial
+      </label>
+      <label id="L/R" class="btn btn-secondary">
+        <input type="radio" name="empressRoute" id="option4" autocomplete="off" value="4"> L/R
+      </label>
+    </div>
+  </div>
+
+  <div class="container ">
+
+    <div class="col col-4">
+      <div class="row justify-content-center row-1">
+        <label  class="modeLabel">Mode</label>
+      </div>
+      <div class="row ">
+        <!-- mode -->
+        <input data-width="100%" type="text" value="20" class="modeDial">
+      </div>
+    </div>
+    <div class="col col-4">
+      <div class="row justify-content-center row-1 ">
+        <label class="ratioLabel">Ratio</label>
+      </div>
+      <div class="row ">
+        <!-- id="ratio" -->
+        <input  data-width="100%" type="text" value="5" class="ratioDial">
+      </div>
+    </div>
+    <div class="col col-4">
+      <div class="row justify-content-center row-1 ">
+        <label class="mixLabel">Mix</label>
+      </div>
+      <div class="row ">
+        <!-- mix -->
+        <input data-width="100%" type="text" value="64" class="mixDial">
+      </div>
+    </div>
+    <div class="col col-4">
+      <div class="row justify-content-center row-1 ">
+        <label class="volLabel">Volume</label>
+      </div>
+      <div class="row ">
+        <!-- vol -->
+        <input data-width="100%" type="text" value="64" class="volDial">
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="col col-4">
+      <div class="row justify-content-center row-1">
+        <label class="feedbackLabel">Feedback</label>
+      </div>
+      <div class="row ">
+        <!-- Feedback -->
+        <input  data-width="100%" type="text" value="64" class="feedbackDial">
+      </div>
+    </div>
+    <div class="col col-4">
+      <div class="row justify-content-center row-1 ">
+        <label  class="toneLabel">Tone</label>
+      </div>
+      <div class="row ">
+        <!-- Tone -->
+        <input data-width="100%" type="text" value="64" class="toneDial">
+      </div>
+    </div>
+    <div class="col col-4">
+      <div class="row justify-content-center row-1 ">
+        <label class="unoLabel">Uno</label>
+      </div>
+      <div class="row ">
+        <!-- Uno -->
+        <input  data-width="100%" type="text" value="64" class="unoDial">
+      </div>
+    </div>
+    <div class="col col-4">
+      <div class="row justify-content-center row-1 ">
+        <label class="dosLabel">Dos</label>
+      </div>
+      <div class="row ">
+        <!-- Dos -->
+        <input data-width="100%" type="text" value="64" class="dosDial">
+      </div>
+    </div>
+  </div>
+  <div id="echoSystem2" class="container justify-content-center col">
+    <div id="empressEngine-btn" class="btn-group btn-group-toggle" data-toggle="buttons">
+      <label id="Engine1" class="btn btn-secondary active">
+        <input type="radio" id="empressEngine1" name="empressEngine" value="1" autocomplete="off" checked> Engine 1
+      </label>
+      <label id="Engine2" class="btn btn-secondary">
+        <input type="radio" name="empressEngine" id="empressEngine2" autocomplete="off" value="2"> Engine 2
+      </label>
+
+    </div>
+    <div id="delaySource-btn" class="btn-group btn-group-toggle" data-toggle="buttons">
+      <label id="Global" class="btn btn-secondary active">
+        <input type="radio" id="delaySource1" name="delaySource" value="1" autocomplete="off" checked>Global</label>
+
+      <label id="Local" class="btn btn-secondary ">
+        <input type="radio" id="delaySource2" name="delaySource" autocomplete="off" value="2">Local</label>
+
+      <label id="Knob" class="btn btn-secondary ">
+        <input type="radio" id="delaySource3" name="delaySource" autocomplete="off" value="3">Knob</label>
+    </div>
+  </div>
+  </div>
+  <div class="container justify-content-center col ">
+    <div>
+      <span id="echoSystem3">       
+        <button type="button" onclick="tap()" id="tap" class="btn btn-primary">TAP</button>
+        <button type="button" onclick="changeOrder()" id="2EngineBtns" class="btn btn-primary 2EngineBtns">Order</button>
+        <button type="button" onclick="soloEngine(1)" id="solo1" class="btn btn-primary 2EngineBtns">Solo 1</button>
+        <button type="button" onclick="soloEngine(2)" id="solo2" class="btn btn-primary 2EngineBtns">Solo 2</button>
+      </span>
+
+      <div class="form-popup" id="myForm">
+        <form class="form-container">
+
+          <label>preset number</label>
+          <input type="number" value="1" min="1" max="35" id="number-input">
+          <button type="button" onclick="savePreset()" class="btn">save</button>
+          <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+      </div>
+
+
+      <button type="button" onclick="openForm()" id="savePreset" class="btn btn-primary"><label
+          class="saveLabel">Save</label></button>
+      <button type="button" onclick="engage()" id="engage" class="btn btn-primary"><label
+          class="engageLabel">Engage</label></button>
+    </div>
+  </div>
+
+
+<div class="container justify-content-center col ">
+  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+    <input type="hidden" name="cmd" value="_donations" />
+    <input type="hidden" name="business" value="RJSH7G7RJV5VY" />
+    <input type="hidden" name="currency_code" value="USD" />
+    <button type="sumbit" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" class="btn btn-primary" >Donate</button>
+    </form> 
+  </div>
+
+  <div  class="end"class="container justify-content-center footer">
+      <center> <a class="end" href="https://youtu.be/jSj_3CA8kT4">HOW TO VIDEO</a></center>
+    <center>
+    <p><small>all rights are reserved to their respective owners<br> 
+    
+    <a  class="end" href="licenses.html">licenses</a><br>
+    <a class="end" href="info.html">My Info</a>
+    
+  </small></p>
+</center>
+  </div>
+</body>
+
+<!-- knobs -->
+<script src="./javascripts/libs/jquery.knob.js"></script>
+<script src="./javascripts/colors.js"></script>
+<script src="./javascripts/script.js"></script>
+
+<script src="./javascripts/knobs.js"></script>
+<script src="./javascripts/ratioBtn.js"></script>
+
+
+
+</html>
