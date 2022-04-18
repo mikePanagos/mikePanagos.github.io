@@ -5,6 +5,11 @@ name: CI
 # Controls when the workflow will run
 on:
  workflow_dispatch:
+  inputs:
+   VERSION:
+    required: true
+    type: string
+ 
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -20,7 +25,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo Hello, world!
+        run: echo ${fithub.event.inputs.VERSION}
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
