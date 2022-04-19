@@ -26,7 +26,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: |
-         Ghtoken= secrets.TOKEN
+         Ghtoken= ${{secrets.TOKEN}}
          echo $Ghtoken
          echo ${{github.event.inputs.VERSION}}
 
