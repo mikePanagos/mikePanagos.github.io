@@ -32,8 +32,9 @@ jobs:
       - if: ${{inputs.version}}
         name: version
         run: |
-           res=$(echo ${{inputs.version}} | sed "s/v/hello/" )
-           echo $res
-      - if: ${{!inputs.version}}
-        name: version
-        run: echo 'hello'
+           if [[$inputs.version]]; then
+               res=$(echo ${{inputs.version}} | sed "s/v/hello/" )
+               echo $res
+           else
+               echo "hello"
+           fi
