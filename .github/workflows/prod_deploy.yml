@@ -9,6 +9,9 @@ on:
    VERSION:
     required: false
     type: string
+   Ver:
+    required: false
+    type: string
  
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -33,6 +36,7 @@ jobs:
         run: |
            if [ ${{inputs.version}} ]; then
                res=$(echo ${{inputs.version}} | sed "s/v/hello/" )
+               ${{inputs.version}}= "${{inputs.version}} $res "
                echo $res
            else
                echo "hello"
