@@ -31,7 +31,7 @@ jobs:
          
       - name: version
         run: |
-           if [-z ${inputs.version+x}]; then
+           if [ ${{inputs.version}} ]; then
                res=$(echo ${{inputs.version}} | sed "s/v/hello/" )
                echo $res
            else
