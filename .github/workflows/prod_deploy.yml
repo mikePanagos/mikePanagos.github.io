@@ -27,14 +27,10 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: |
-         Ghtoken= $TOKEN
-         echo $Ghtoken
-         echo ${{github.event.inputs.VERSION}}
-        env:
-         TOKEN: ${{ secrets.TOKEN }}
+         echo ${{inputs.VERSION}}
          
       - if: ${{inputs.version}}
         name: version
         run: |
-           res=$(echo ${{inputs.version}} | sed "s/v/$Ghtoken/" )
+           res=$(echo ${{inputs.version}} | sed "s/v/hello/" )
            echo $res
