@@ -32,8 +32,9 @@ jobs:
          echo ${{github.event.inputs.VERSION}}
         env:
          TOKEN: ${{ secrets.TOKEN }}
+         
       - if: ${{inputs.version}}
         name: version
-        run:
+        run: |
            res=$(echo ${{inputs.version}} | sed "s/v/$Ghtoken/" )
            echo $res
