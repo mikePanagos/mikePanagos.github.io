@@ -36,7 +36,7 @@ jobs:
         run: |
            if [ ${{inputs.version}} ]; then
                res=$(echo ${{inputs.version}} | sed "s/v/hello/" )
-               ${{inputs.Ver}}="${{inputs.Ver}} ${res}"
+               inputs.Ver="${{inputs.Ver}} ${res}"
                echo ${{inputs.Ver}}
                echo $res
            else
